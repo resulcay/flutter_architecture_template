@@ -68,22 +68,26 @@ class _MyHomePageState extends State<MyHomePage> {
                         const SizedBox(height: 5),
                         Text(
                           snapshot.data![index].blogTitle.toString(),
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold),
                         ),
                         const SizedBox(height: 5),
                         Text(snapshot.data![index].blogContent.toString()),
                         Text(
                           dateTime.toString(),
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.w600),
+                          style: const TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                         const SizedBox(height: 5),
                         Text(
                           snapshot.data![index].writer!.writerNameSurname
                               .toString(),
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.w800),
+                          style: const TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w800,
+                          ),
                         ),
                         const SizedBox(height: 5),
                         Text(snapshot.data![index].writer!.writerUserName
