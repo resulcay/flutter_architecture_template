@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:gen/gen.dart';
 import 'package:pureblog/feature/home/view/mixin/home_view_mixin.dart';
 import 'package:pureblog/product/init/config/app_environment.dart';
 import 'package:pureblog/product/init/language/locale_keys.g.dart';
@@ -24,7 +25,13 @@ class _HomeViewState extends State<HomeView> with HomeViewMixin {
         child: Column(
           children: [
             Text(EnvironmentItems.baseUrl.value),
-            const Text('Change Language'),
+            Text(
+              'Change Language',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 40,
+              ),
+            ),
             const Text(LocaleKeys.home_title).tr(),
             ElevatedButton(
               onPressed: () => ProductLocalization.changeLanguage(
@@ -50,7 +57,15 @@ class _HomeViewState extends State<HomeView> with HomeViewMixin {
             const SizedBox(height: 10),
             OutlinedButton(
               onPressed: () {},
-              child: const Icon(Icons.add),
+              child: const Icon(
+                Icons.add,
+                size: 60,
+              ),
+            ),
+            Assets.lottie.loading.lottie(
+              height: 100,
+              width: 100,
+              package: 'gen',
             ),
           ],
         ),

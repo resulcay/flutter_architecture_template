@@ -16,11 +16,7 @@ dependencies:
   vexana: ^3.5.4
   flutter_riverpod: ^2.4.4
   easy_localization: ^3.0.3
-
-  #Config
-  equatable: ^2.0.5
-  json_annotation: ^4.8.1
-  envied: ^0.3.0+3
+  google_fonts: ^6.2.1
 
   # Utility
   easy_logger: ^0.0.2
@@ -28,87 +24,32 @@ dependencies:
 
   # Modules
   core:
-    path: module/core  
+    path: module/core/  
   common: 
-    path: module/common
+    path: module/common/
   widget:
-    path: module/widget
-
-
+    path: module/widget/
+  gen:
+    path: module/gen/
+    
 dev_dependencies:
   flutter_test:
     sdk: flutter
   
   # Core Dev Dependencies
   very_good_analysis: ^5.1.0
-  build_runner: ^2.4.8
-  flutter_gen_runner: ^5.3.2
   flutter_launcher_icons: ^0.13.1
-  envied_generator: ^0.3.0+3
 
-flutter_launcer_icons:
+flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/images/icon.png"
+  image_path: "module/gen/assets/images/icon.png"
   min_sdk_version: 21
   remove_alpha_ios: true
-
-flutter_gen:
-  output: lib/product/generated
-  integrations:
-    lottie: true
 
 flutter:
   uses-material-design: true
 
   assets:
     - assets/images/
-    - assets/fonts/
-    - assets/translations/
-
-  fonts:
-    - family: Poppins
-      fonts:
-        - asset: assets/fonts/poppins/Poppins-Regular.ttf
-        - asset: assets/fonts/poppins/Poppins-Italic.ttf
-          style: italic
-        - asset: assets/fonts/poppins/Poppins-Black.ttf
-          weight: 900
-        - asset: assets/fonts/poppins/Poppins-BlackItalic.ttf
-          weight: 900
-          style: italic
-        - asset: assets/fonts/poppins/Poppins-ExtraBold.ttf
-          weight: 800
-        - asset: assets/fonts/poppins/Poppins-ExtraBoldItalic.ttf
-          weight: 800
-          style: italic  
-        - asset: assets/fonts/poppins/Poppins-Bold.ttf
-          weight: 700
-        - asset: assets/fonts/poppins/Poppins-BoldItalic.ttf
-          weight: 700
-          style: italic
-        - asset: assets/fonts/poppins/Poppins-SemiBold.ttf
-          weight: 600
-        - asset: assets/fonts/poppins/Poppins-SemiBoldItalic.ttf
-          weight: 600
-          style: italic
-        - asset: assets/fonts/poppins/Poppins-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/poppins/Poppins-MediumItalic.ttf
-          weight: 500
-          style: italic
-        - asset: assets/fonts/poppins/Poppins-Light.ttf
-          weight: 300
-        - asset: assets/fonts/poppins/Poppins-LightItalic.ttf
-          weight: 300
-          style: italic
-        - asset: assets/fonts/poppins/Poppins-ExtraLight.ttf
-          weight: 200
-        - asset: assets/fonts/poppins/Poppins-ExtraLightItalic.ttf
-          weight: 200
-          style: italic
-        - asset: assets/fonts/poppins/Poppins-Thin.ttf
-          weight: 100
-        - asset: assets/fonts/poppins/Poppins-ThinItalic.ttf
-          weight: 100
-          style: italic  
+    - assets/translations/ 

@@ -21,3 +21,4 @@ linter:
   rules:
     sort_pub_dependencies: false
     public_member_api_docs: false
+    prefer_const_constructors: false

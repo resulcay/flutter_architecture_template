@@ -1,5 +1,5 @@
 import 'package:envied/envied.dart';
-import 'package:pureblog/product/init/config/app_config.dart';
+import 'package:gen/src/environment/app_config.dart';
 
 part 'env_dev.g.dart';
 

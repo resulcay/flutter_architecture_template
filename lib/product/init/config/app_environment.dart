@@ -1,7 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:pureblog/product/init/config/app_config.dart';
-import 'package:pureblog/product/init/config/env_dev.dart';
-import 'package:pureblog/product/init/config/env_prod.dart';
+import 'package:gen/gen.dart';
 
 final class AppEnvironment {
   AppEnvironment.setup({required AppConfig config}) {
