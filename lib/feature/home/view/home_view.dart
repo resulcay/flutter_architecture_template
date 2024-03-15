@@ -1,3 +1,5 @@
+import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:gen/gen.dart';
@@ -5,11 +7,13 @@ import 'package:pureblog/feature/home/view/mixin/home_view_mixin.dart';
 import 'package:pureblog/product/init/config/app_environment.dart';
 import 'package:pureblog/product/init/language/locale_keys.g.dart';
 import 'package:pureblog/product/init/language/product_localization.dart';
+import 'package:pureblog/product/navigation/app_router.dart';
 import 'package:pureblog/product/utility/constant/enum/locales.dart';
 
 part 'widget/home_app_bar.dart';
 
-class HomeView extends StatefulWidget {
+@RoutePage()
+final class HomeView extends StatefulWidget {
   const HomeView({super.key});
 
   @override
@@ -66,6 +70,13 @@ class _HomeViewState extends State<HomeView> with HomeViewMixin {
               height: 100,
               width: 100,
               package: 'gen',
+            ),
+            ElevatedButton(
+              onPressed: () async =>
+                  context.router.push<bool?>(HomeDetailRoute(id: '3')),
+              child: const Text(
+                'Route to Detail Page',
+              ),
             ),
           ],
         ),
