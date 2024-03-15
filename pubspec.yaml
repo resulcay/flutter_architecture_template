@@ -39,6 +39,7 @@ dev_dependencies:
   # Core Dev Dependencies
   very_good_analysis: ^5.1.0
   flutter_launcher_icons: ^0.13.1
+  build_runner: ^2.4.6
 
 flutter_launcher_icons:
   android: "launcher_icon"
@@ -49,7 +50,3 @@ flutter_launcher_icons:
 
 flutter:
   uses-material-design: true
-
-  assets:
-    - assets/images/
-    - assets/translations/ 

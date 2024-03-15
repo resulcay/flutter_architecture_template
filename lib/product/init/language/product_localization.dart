@@ -16,7 +16,7 @@ final class ProductLocalization extends EasyLocalization {
   static final List<Locale> _supportedLocales =
       Locales.values.map((e) => e.locale).toList();
 
-  static const String _assetPath = 'assets/translations';
+  static const String _assetPath = 'module/gen/assets/translations';
 
   static Future<void> changeLanguage({
     required BuildContext context,
