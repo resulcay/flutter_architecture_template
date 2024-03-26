@@ -5,6 +5,7 @@ import 'package:pureblog/product/init/language/product_localization.dart';
 import 'package:pureblog/product/init/theme/custom_dark_theme.dart';
 import 'package:pureblog/product/init/theme/custom_light_theme.dart';
 import 'package:pureblog/product/navigation/app_router.dart';
+import 'package:widget/widget.dart';
 
 void main() async {
   await ApplicationInitialization().initConfig();
@@ -18,6 +19,7 @@ class _MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routerConfig: _appRouter.config(),
+      builder: CustomResponsiveBuilder.build,
       debugShowCheckedModeBanner: false,
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
