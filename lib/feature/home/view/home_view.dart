@@ -25,6 +25,13 @@ class _HomeViewState extends State<HomeView> with HomeViewMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => SuccessDialog.show(
+          title: 'Success Dialog',
+          context: context,
+        ),
+        child: const Icon(Icons.star_border_purple500_rounded),
+      ),
       appBar: const _HomeAppBar(),
       body: SingleChildScrollView(
         child: Center(
