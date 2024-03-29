@@ -7,7 +7,7 @@ final class SuccessDialog extends StatelessWidget {
     super.key,
   });
   final String title;
-  static Future<bool?> show({
+  static Future<bool> show({
     required BuildContext context,
     required String title,
   }) async {
