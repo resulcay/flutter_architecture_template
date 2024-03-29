@@ -1,4 +1,4 @@
-package com.flutter_architecture_template.name
+package com.example.flutter_architecture_template
 
 import io.flutter.embedding.android.FlutterActivity
 
