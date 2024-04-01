@@ -9,6 +9,7 @@ import 'package:kartal/kartal.dart';
 import 'package:logger/logger.dart';
 import 'package:pureblog/product/init/config/app_environment.dart';
 import 'package:pureblog/product/init/network/custom_http_overrides.dart';
+import 'package:pureblog/product/state/container/product_state_container.dart';
 
 @immutable
 final class ApplicationInitialization {
@@ -34,5 +35,6 @@ final class ApplicationInitialization {
     };
 
     AppEnvironment.setEnvironment();
+    ProductContainer.setup();
   }
 }

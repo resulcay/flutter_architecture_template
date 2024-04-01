@@ -26,7 +26,7 @@ enum EnvironmentItems {
           return AppEnvironment._config.apiKey;
       }
     } catch (_) {
-      throw Exception('Environment item not found');
+      throw Exception('Environment item could not found');
     }
   }
 }

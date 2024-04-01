@@ -1,12 +1,11 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:vexana/vexana.dart';
 
 part 'category.g.dart';
 
 @JsonSerializable()
-@immutable
-final class Category with EquatableMixin {
+class Category extends INetworkModel<Category> with EquatableMixin {
   Category({
     this.categoryID,
     this.categoryName,
@@ -22,7 +21,13 @@ final class Category with EquatableMixin {
   final String? categoryDescription;
   final bool? categoryStatus;
 
+  @override
   Map<String, dynamic> toJson() => _$CategoryToJson(this);
+
+  @override
+  Category fromJson(Map<String, dynamic> json) {
+    return _$CategoryFromJson(json);
+  }
 
   @override
   List<Object?> get props => [

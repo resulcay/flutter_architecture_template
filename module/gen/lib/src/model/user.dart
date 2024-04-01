@@ -1,12 +1,11 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:vexana/vexana.dart';
 
 part 'user.g.dart';
 
 @JsonSerializable()
-@immutable
-class User with EquatableMixin {
+class User extends INetworkModel<User> with EquatableMixin {
   User({
     this.userID,
     this.writerID,
@@ -29,7 +28,13 @@ class User with EquatableMixin {
   final String? writerMail;
   final bool? writerStatus;
 
+  @override
   Map<String, dynamic> toJson() => _$UserToJson(this);
+
+  @override
+  User fromJson(Map<String, dynamic> json) {
+    return _$UserFromJson(json);
+  }
 
   @override
   List<Object?> get props => [
