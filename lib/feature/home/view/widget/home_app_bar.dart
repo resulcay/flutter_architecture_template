@@ -18,18 +18,26 @@ class _HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         package: 'gen',
         height: 26,
       ),
-      actions: [
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.search,
-            size: 26,
-          ),
-        ),
+      actions: const [
+        _TrailingWidget(),
       ],
     );
   }
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+}
+
+class _TrailingWidget extends StatelessWidget {
+  const _TrailingWidget();
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<HomeViewModel, HomeViewState>(
+      builder: (context, state) {
+        if (!state.isLoading) return const SizedBox.shrink();
+        return CircularProgressIndicator.adaptive();
+      },
+    );
+  }
 }

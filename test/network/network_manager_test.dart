@@ -24,7 +24,7 @@ void main() {
     });
 
     test('Get blog items from api with error', () async {
-      manager.listenErrorMStatus(
+      manager.listenErrorStatus(
         errorListener: (value) => expect(value, isNotNull),
       );
 

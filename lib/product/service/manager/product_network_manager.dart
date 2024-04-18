@@ -13,7 +13,7 @@ final class ProductNetworkManager extends NetworkManager<EmptyModel> {
           ),
         );
 
-  void listenErrorMStatus({required ValueChanged<int> errorListener}) {
+  void listenErrorStatus({required ValueChanged<int> errorListener}) {
     interceptors.add(
       InterceptorsWrapper(
         onError: (error, handler) {
