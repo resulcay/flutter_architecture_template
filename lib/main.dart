@@ -1,15 +1,20 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pureblog/product/init/application_initialization.dart';
 import 'package:pureblog/product/init/language/product_localization.dart';
+import 'package:pureblog/product/init/state_initialization.dart';
 import 'package:pureblog/product/init/theme/custom_dark_theme.dart';
 import 'package:pureblog/product/init/theme/custom_light_theme.dart';
 import 'package:pureblog/product/navigation/app_router.dart';
+import 'package:pureblog/product/state/view_model/product_view_model.dart';
 import 'package:widget/widget.dart';
 
 void main() async {
   await ApplicationInitialization().initConfig();
-  runApp(ProductLocalization(child: const _MyApp()));
+  runApp(
+    ProductLocalization(child: StateInitialization(child: const _MyApp())),
+  );
 }
 
 class _MyApp extends StatelessWidget {
@@ -27,6 +32,7 @@ class _MyApp extends StatelessWidget {
       title: 'PureBlog',
       theme: CustomLightTheme().themeData,
       darkTheme: CustomDarkTheme().themeData,
+      themeMode: context.watch<ProductViewModel>().state.themeMode,
     );
   }
 }

@@ -13,6 +13,7 @@ import 'package:pureblog/product/init/language/locale_keys.g.dart';
 import 'package:pureblog/product/init/language/product_localization.dart';
 import 'package:pureblog/product/navigation/app_router.dart';
 import 'package:pureblog/product/padding/custom_padding.dart';
+import 'package:pureblog/product/state/base/base_state.dart';
 import 'package:pureblog/product/utility/constant/enum/locales.dart';
 import 'package:pureblog/product/widget/elevated_text_button.dart';
 import 'package:pureblog/product/widget/project_network_image.dart';
@@ -28,7 +29,7 @@ final class HomeView extends StatefulWidget {
   State<HomeView> createState() => _HomeViewState();
 }
 
-class _HomeViewState extends State<HomeView> with HomeViewMixin {
+class _HomeViewState extends BaseState<HomeView> with HomeViewMixin {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -50,6 +51,18 @@ class _HomeViewState extends State<HomeView> with HomeViewMixin {
             child: Center(
               child: Column(
                 children: [
+                  IconButton(
+                    onPressed: () {
+                      productViewModel.changeThemeMode(ThemeMode.dark);
+                    },
+                    icon: Icon(Icons.dark_mode),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      productViewModel.changeThemeMode(ThemeMode.light);
+                    },
+                    icon: Icon(Icons.light_mode),
+                  ),
                   AwaitButton(
                     onOperation: () {
                       return Future.delayed(
