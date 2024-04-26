@@ -21,6 +21,7 @@ mixin HomeViewMixin on BaseState<HomeView> {
 
     _viewModel = HomeViewModel(
       blogManager: BlogService(networkManager: productNetworkManager),
+      blogCacheOperation: ProductStateItems.productCache.blogCacheOperation,
     );
     super.initState();
   }

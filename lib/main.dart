@@ -10,15 +10,15 @@ import 'package:pureblog/product/navigation/app_router.dart';
 import 'package:pureblog/product/state/view_model/product_view_model.dart';
 import 'package:widget/widget.dart';
 
-void main() async {
+Future<void> main() async {
   await ApplicationInitialization().initConfig();
   runApp(
-    ProductLocalization(child: StateInitialization(child: const _MyApp())),
+    ProductLocalization(child: StateInitialization(child: const MyApp())),
   );
 }
 
-class _MyApp extends StatelessWidget {
-  const _MyApp();
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
   static final _appRouter = AppRouter();
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class _MyApp extends StatelessWidget {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      title: 'PureBlog',
+      title: 'Flutter Architecture Template',
       theme: CustomLightTheme().themeData,
       darkTheme: CustomDarkTheme().themeData,
       themeMode: context.watch<ProductViewModel>().state.themeMode,

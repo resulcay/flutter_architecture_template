@@ -2,7 +2,7 @@ import 'package:core/src/cache/core/cache_model.dart';
 import 'package:core/src/cache/core/cache_operation.dart';
 import 'package:hive/hive.dart';
 
-final class HiveCacheOperation<T extends CacheModel> extends CacheOperation<T> {
+class HiveCacheOperation<T extends CacheModel> extends CacheOperation<T> {
   HiveCacheOperation() {
     _box = Hive.box<T>(name: T.toString());
   }

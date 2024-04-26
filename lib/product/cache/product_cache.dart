@@ -1,4 +1,5 @@
 import 'package:core/core.dart';
+import 'package:pureblog/product/cache/model/blog_cache_model.dart';
 import 'package:pureblog/product/cache/model/user_cache_model.dart';
 
 final class ProductCache {
@@ -13,4 +14,7 @@ final class ProductCache {
 
   late final HiveCacheOperation<UserCacheModel> userCacheOperation =
       HiveCacheOperation<UserCacheModel>();
+
+  late final HiveCacheOperation<BlogCacheModel> blogCacheOperation =
+      HiveCacheOperation<BlogCacheModel>();
 }

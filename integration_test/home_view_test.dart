@@ -1,0 +1,22 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:pureblog/main.dart' as app;
+
+void main() {
+  testWidgets('Home Page Test', (WidgetTester tester) async {
+    await app.main();
+    await tester.pumpWidget(app.MyApp());
+
+    await tester.pumpAndSettle();
+    await tester.tap(find.byType(FloatingActionButton));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Success Dialog'), findsOneWidget);
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.byIcon(Icons.check_circle));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Test Title'), findsNothing);
+  });
+}

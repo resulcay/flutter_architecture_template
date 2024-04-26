@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gen/gen.dart';
 import 'package:pureblog/feature/home/view/mixin/await_button/await_button.dart';
 import 'package:pureblog/feature/home/view/mixin/home_view_mixin.dart';
+import 'package:pureblog/feature/home/view/widget/blog_list.dart';
 import 'package:pureblog/feature/home/view_model/home_view_model.dart';
 import 'package:pureblog/feature/home/view_model/state/home_view_state.dart';
 import 'package:pureblog/product/init/config/app_environment.dart';
@@ -158,28 +159,7 @@ class _BlogListBuilder extends StatelessWidget {
         selector: (state) => state.blogs ?? [],
         builder: (context, state) {
           if (state!.isEmpty) return const SizedBox.shrink();
-          return ListView.builder(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            itemCount: state.length,
-            itemBuilder: (context, index) {
-              final blog = state[index];
-              return ListTile(
-                title: Text(
-                  blog.blogTitle!,
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                subtitle: Text(
-                  blog.blogContent!,
-                  maxLines: 3,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                leading: ProjectNetworkImage(
-                  imageUrl: 'https://pureblog.com.tr${blog.blogImage}',
-                ),
-              );
-            },
-          );
+          return BlogList(blogs: state);
         },
       ),
     );
